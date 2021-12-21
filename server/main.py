@@ -3,7 +3,7 @@ import sys
 import pika
 
 
-def publish_websocket(amqp_url, message):
+def publish_websocket_message(amqp_url, message):
     print(f"Connecting to {amqp_url}")
     mq_creds = pika.URLParameters(amqp_url)
     connection = pika.BlockingConnection(mq_creds)
@@ -22,7 +22,7 @@ def publish_websocket(amqp_url, message):
 if __name__ == "__main__":
     amqp_url = os.environ.get("AMQP_URL", "localhost")
 
-    sys.exit(publish_websocket(
+    sys.exit(publish_websocket_message(
         amqp_url=amqp_url,
         message="Websocket message!"
     ))
