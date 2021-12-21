@@ -20,7 +20,7 @@ def publish_websocket_message(amqp_url, message):
 
 
 if __name__ == "__main__":
-    amqp_url = os.environ.get("AMQP_URL", "amqp://user:password@localhost:5672/%2F")
+    amqp_url = os.environ.get("AMQP_URL", "amqp://user:password@localhost:5672/")
 
     sys.exit(publish_websocket_message(
         amqp_url=amqp_url,
